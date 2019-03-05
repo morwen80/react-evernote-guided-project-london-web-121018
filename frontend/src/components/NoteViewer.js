@@ -1,13 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Component } from 'react';
 
-const NoteViewer = (props) => {
+class NoteViewer extends Component {
+
+render() {
   return (
-    <Fragment>
-      <h2>Title</h2>
-      <p>Body</p>
-      <button>Edit</button>
-    </Fragment>
-  );
+    <React.Fragment>
+      <h2>{this.props.selectedNote.title}</h2>
+      <p>{this.props.selectedNote.body}</p>
+      <button onClick={(e) => this.props.editNote(e)}>Edit</button>
+    </React.Fragment>
+  );}
 }
 
 export default NoteViewer;
